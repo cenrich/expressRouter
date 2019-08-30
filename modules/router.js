@@ -1,9 +1,10 @@
 const express = require('express')
 const path = require('path')
+const data = require ('./data')
 const router = express.Router()
 
 router.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname,'../pages/home.html'))
+  res.sendFile(path.join(__dirname,'../pages/index.html'))
 })
 
 router.get('/productos', (req, res)=>{
@@ -11,7 +12,7 @@ router.get('/productos', (req, res)=>{
 })
 
 router.get('/Api/productos', (req, res)=>{
-  res.json({data:[{title:"queso",type:"rancio"}]})
+  res.json(data)
 })
 
 router.use((req, res)=>{
